@@ -3,3 +3,18 @@ steps:
   command: echo Hello World!
   agents:
     queue: kubernetes
+  plugins:
+    - kubernetes:
+        gitEnvFrom:
+          - secretRef: { name: yer-private-git-ssh-key }
+        podSpec:
+          containers:
+            - image: alpine:latest
+              command: [kubectl]
+              args:
+                - "version"
+                - "--short"
+              resources:
+                limits:
+                  cpu: "100m"
+                  memory: "128Mi"
