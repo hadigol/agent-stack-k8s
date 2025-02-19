@@ -1,6 +1,5 @@
 steps:
 - label: Hello World!
-  command: echo Hello World!
   agents:
     queue: kubernetes
   plugins:
@@ -10,8 +9,5 @@ steps:
             secretName: my-git-credentials
         podSpec:
           containers:
-            - image: gradle:latest
-              command: [gradle]
-              args:
-                - jib
-                - --image=ttl.sh/example:1h
+            - image: alpine:latest
+              command: echo Hello World!
