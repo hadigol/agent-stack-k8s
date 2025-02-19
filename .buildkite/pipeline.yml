@@ -11,11 +11,5 @@ steps:
         podSpec:
           containers:
             - image: alpine:latest
-              command: [kubectl]
-              args:
-                - "version"
-                - "--short"
-              resources:
-                limits:
-                  cpu: "100m"
-                  memory: "128Mi"
+              command: 
+                - echo Hello World!
