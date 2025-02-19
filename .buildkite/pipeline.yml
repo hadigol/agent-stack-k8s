@@ -6,7 +6,8 @@ steps:
   plugins:
     - kubernetes:
         gitEnvFrom:
-          - secretRef: { name: yer-private-git-ssh-key }
+          - secretRef:
+            name: my-git-ssh-credentials
         podSpec:
           containers:
             - image: alpine:latest
