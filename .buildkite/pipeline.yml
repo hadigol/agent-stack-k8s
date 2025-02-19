@@ -10,4 +10,5 @@ steps:
         podSpec:
           containers:
             - image: alpine:latest
-              command: echo Hello World!
+              command: 
+                - echo Hello World!
