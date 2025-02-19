@@ -7,7 +7,7 @@ steps:
     - kubernetes:
         gitEnvFrom:
           - secretRef:
-            name: my-git-ssh-credentials
+              name: my-git-ssh-credentials
         podSpec:
           containers:
             - image: gradle:latest
