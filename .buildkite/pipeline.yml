@@ -5,9 +5,9 @@ steps:
     queue: kubernetes
   plugins:
     - kubernetes:
-        gitEnvFrom:
-          - secretRef:
-              name: my-git-ssh-credentials
+        checkout:
+          gitCredentialsSecret:
+            secretName: my-git-credentials
         podSpec:
           containers:
             - image: gradle:latest
